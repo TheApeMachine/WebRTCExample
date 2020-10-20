@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://core/input.gd" type="Script" id=2]
+[ext_resource path="res://ui.gd" type="Script" id=3]
+[ext_resource path="res://core/network.gd" type="Script" id=4]
+[ext_resource path="res://scenes.gd" type="Script" id=5]
+[ext_resource path="res://core/networking/client.gd" type="Script" id=6]
+[ext_resource path="res://core/networking/server.gd" type="Script" id=7]
+
+[sub_resource type="CubeMesh" id=1]
+
+[node name="main" type="Node"]
+script = ExtResource( 1 )
+
+[node name="input" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="ui" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="network" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="server" type="Node" parent="network"]
+script = ExtResource( 7 )
+
+[node name="client" type="Node" parent="network"]
+script = ExtResource( 6 )
+
+[node name="scenes" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.17498, 0, -5.46838 )
+mesh = SubResource( 1 )
+material/0 = null
